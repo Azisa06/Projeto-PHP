@@ -15,9 +15,9 @@
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function criarCategorias(string $nome): bool{ //add descricao
+    function criarCategorias(string $nome): bool{
         global $pdo;
-        $stmt = $pdo->prepare("INSERT INTO categoria (nome) VALUES (?)"); //mudar nome aqui tbm
+        $stmt = $pdo->prepare("INSERT INTO categoria (nome) VALUES (?)");
         return $stmt->execute([$nome]);
     }
 
@@ -29,7 +29,7 @@
         return $categoria ? $categoria : null;
     }
 
-    function alterarCategoria(string $nome, int $id): bool { //add descricao
+    function alterarCategoria(string $nome, int $id): bool {
         global $pdo;
         $stmt = $pdo->prepare("UPDATE categoria SET nome = ? WHERE id = ?");
         return $stmt->execute([$nome, $id]);

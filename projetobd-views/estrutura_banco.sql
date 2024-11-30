@@ -33,3 +33,16 @@ CREATE TABLE servico (
     preco DECIMAL(10, 2)
 );
 
+CREATE TABLE manutencao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    tecnico_id INT NOT NULL,
+    servico_id INT NOT NULL,
+    equipamento_id INT NOT NULL,
+    data_criacao DATE,
+    data_fim DATE,
+    FOREIGN KEY (tecnico_id) REFERENCES usuario(id),
+    FOREIGN KEY (servico_id) REFERENCES servico(id),
+    FOREIGN KEY (equipamento_id) REFERENCES equipamento(id),
+    CHECK ((SELECT nivel FROM usuario WHERE id = tecnico_id) = 'tec')
+);

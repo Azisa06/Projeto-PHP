@@ -21,10 +21,11 @@
         try{
             $nome = $_POST['nome'];
             $email = $_POST['email'];
+            $senha = $_POST['senha'];
             if(empty($nome) || empty($email)){
                 $erro = "Preencha os campos obrigatórios!";
             } else{
-                if (alterarTecnico($nome, $email, $id)){
+                if (alterarTecnico($nome, $email, $senha, $id)){
                     header('Location: tecnicos.php');
                     exit();
                 } else{
@@ -38,7 +39,7 @@
 ?>
 
 <div class="container mt-5">
-    <h2>Editar Técnico</h2> <!--to em dúvida se esse editar tem q ser dessa forma-->
+    <h2>Editar Técnico</h2>
 
     <form method="post">
         <div class="mb-3">

@@ -48,7 +48,6 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="tecnicos.php">Gerenciar Técnicos</a></li>
-            <li><a class="dropdown-item" href="categorias_hab.php">Gerenciar Habilidade</a></li>
           </ul>
         </li>
 

@@ -6,7 +6,7 @@
 
     function gerarDadosGraficos(): array{
         global $pdo;
-        $stmt = $pdo->query("SELECT s.id, s.nome, SUM(s.preco) as Total FROM servico s "); // INNER JOIN equipamento e ON e.id = s.equipamento_id GROUP BY e.id
+        $stmt = $pdo->query("SELECT s.id, s.nome, SUM(s.preco) as Total FROM servico s ");
         return $stmt->fetchALL(PDO::FETCH_ASSOC);
     }
 

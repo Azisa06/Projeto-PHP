@@ -6,7 +6,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         try {
             $id = intval($_POST['id']);
-            if (excluirTecnico($id)){ //dar uma olhada nesta função
+            if (excluirTecnico($id)){ 
                 header('Location: tecnicos.php');
                 exit();
             } else {
@@ -18,7 +18,7 @@
     } else {
         if (isset($_GET['id'])){
             $id = intval($_GET['id']);
-            $tecnico = retornaTecnicoPorId($id); //dar uma olhada nesta função
+            $tecnico = buscarTecnicoPorId($id); 
             if ($tecnico == null){
                 header('Location: tecnicos.php');
                 exit();
